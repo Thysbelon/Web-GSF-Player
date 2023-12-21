@@ -11,10 +11,8 @@ add_library(psflib STATIC psflib/psflib.c psflib/psf2fs.c)
 target_link_libraries(psflib PRIVATE ZLIB::ZLIB)
 
 if(EMSCRIPTEN)
-	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-error=incompatible-pointer-types -Wno-error=incompatible-function-pointer-types") # There's a pointer types warning when building gsf2wav.o with gcc, but it's an error in Emscripten. attempting to remove error. this may not work
-	#set(LINK_FLAGS "${LINK_FLAGS} -sEXPORTED_RUNTIME_METHODS=FS -sMODULARIZE -s 'EXPORT_NAME=\"WebSPCplayer\"'")
-	#set(LINK_FLAGS "${LINK_FLAGS} -sEXPORTED_RUNTIME_METHODS=FS -sMODULARIZE -s EXPORT_NAME=WebSPCplayer")
-	add_link_options(-sEXPORTED_RUNTIME_METHODS=FS -sMODULARIZE -s EXPORT_NAME=WebGSFplayer)
+	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-error=incompatible-pointer-types -Wno-error=incompatible-function-pointer-types") # There's a pointer types warning when building gsf2wav.o with gcc, but it's an error in Emscripten. This statement sets it back to just a warning. This hasn't caused any problems so far.
+	add_link_options(-sALLOW_MEMORY_GROWTH -sEXPORTED_RUNTIME_METHODS=FS -sMODULARIZE -s EXPORT_NAME=WebGSFplayer)
 endif()
 
 add_executable(gsf2wav gsf2wav.c)
