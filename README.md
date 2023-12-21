@@ -1,6 +1,8 @@
 # Web-GSF-Player
 Work in progress. Will play GSF files in the browser.
 
+The `docs` folder contains compiled gsf2wav js and wasm binaries, as well as a [demo page](https://thysbelon.github.io/Web-GSF-Player).
+
 @jprjr created lazygsf and gsf2wav.
 
 The mgba CMakeLists.txt threads modification was copied from [@jprjr's fork](https://github.com/mgba-emu/mgba/pull/2065),    
@@ -19,5 +21,5 @@ Right now, the mgba 0.10.2 release build is being used.
 5. go to the mgba folder in the lazygsf folder.
 6. replace the contents of the mgba folder with the source code of the [mgba 0.10.2 release](https://github.com/mgba-emu/mgba/tree/0.10.2).
 7. download the source code of this repository
-8. place the contents of this repository in gsf2wav; this will replace the CMakeLists.txt files of gsf2wav, lazygsf and mgba with my modified copies.
-9. build with cmake
+8. place the contents of this repository (except the `docs` folder and the `README.md` file) in gsf2wav; this will replace the CMakeLists.txt files of gsf2wav, lazygsf and mgba with my modified copies.
+9. build with Emscripten's `emcmake`
