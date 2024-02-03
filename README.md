@@ -11,7 +11,7 @@ The modifications to mgba's CMakeLists.txt allow libmgba.a to be compiled with E
 
 The lazygsf CMakeLists.txt modifications call mgba's CMakeLists.txt instead of manually including sources; the goal of this modification was to make it easier to update mgba to the latest version.
 
-Right now, the mgba 0.10.2 release build is being used.
+Right now, the mgba 0.10.3 release build is being used.
 
 ## How to Build
 1. Use Linux
@@ -19,7 +19,7 @@ Right now, the mgba 0.10.2 release build is being used.
 3. go to the gsf2wav folder
 4. make sure [lazygsf](https://github.com/jprjr/lazygsf/) is in the lazygsf folder
 5. go to the mgba folder in the lazygsf folder.
-6. replace the contents of the mgba folder with the source code of the [mgba 0.10.2 release](https://github.com/mgba-emu/mgba/tree/0.10.2).
+6. replace the contents of the mgba folder with the source code of the [mgba 0.10.3 release](https://github.com/mgba-emu/mgba/tree/0.10.3).
 7. download the source code of this repository
 8. place the contents of this repository (except the `docs` folder and the `README.md` file) in gsf2wav; this will replace the CMakeLists.txt files of gsf2wav, lazygsf and mgba with my modified copies.
 9. build with Emscripten's `emcmake`
